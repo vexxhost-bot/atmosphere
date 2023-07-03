@@ -73,13 +73,14 @@ _atmosphere_images:
   ingress_nginx_controller: registry.k8s.io/ingress-nginx/controller:v1.1.1@sha256:0bc88eb15f9e7f84e8e56c14fa5735aaa488b840983f87bd79b1054190e660de
   ingress_nginx_default_backend: registry.k8s.io/defaultbackend-amd64:1.5
   ingress_nginx_kube_webhook_certgen: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.1.1@sha256:64d8c73dca984af206adf9d6d7e46aa550362b1d7a01f3a0a91b20cc67868660 # noqa: yaml[line-length]
-  ironic_api: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/heat:zed
-  ironic_conductor: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/heat:zed
-  ironic_db_sync: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/heat:zed
+  ironic_api: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/ironic:zed
+  ironic_conductor: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/ironic:zed
+  ironic_db_sync: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/ironic:zed
+  ironic_dhclient: ghcr.io/vexxhost/dhclient:latest # image-source: ghcr.io/vexxhost/dhclient:latest
   ironic_manage_cleaning_network: quay.io/vexxhost/heat@sha256:755225f9a63c0968f1ceeda3a2f06c66dd8d247ff00308f549e66496aa8f59d0 # image-source: quay.io/vexxhost/heat:zed
   ironic_pxe_http: docker.io/library/nginx:1.25 # image-source: docker.io/library/nginx:1.25
-  ironic_pxe_init: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/heat:zed
-  ironic_pxe: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/heat:zed
+  ironic_pxe_init: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/ironic:zed
+  ironic_pxe: quay.io/vexxhost/ironic:zed # image-source: quay.io/vexxhost/ironic:zed
   ironic_retrive_cleaning_network: quay.io/vexxhost/heat@sha256:755225f9a63c0968f1ceeda3a2f06c66dd8d247ff00308f549e66496aa8f59d0 # image-source: quay.io/vexxhost/heat:zed
   ironic_retrive_swift_config: quay.io/vexxhost/heat@sha256:755225f9a63c0968f1ceeda3a2f06c66dd8d247ff00308f549e66496aa8f59d0 # image-source: quay.io/vexxhost/heat:zed
   keepalived: us-docker.pkg.dev/vexxhost-infra/openstack/keepalived:2.0.19
