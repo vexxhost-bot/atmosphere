@@ -34,15 +34,14 @@ _loki_helm_values:
       enabled: false
     rules:
       additionalGroups:
-      - name: additional-loki-rules
-        rules:
-          - alert: NovaCellNotResponding
-            expr: sum(rate(loki_request_duration_seconds_bucket[1m])) by (le, job)
-            expr: 'kubernetes.labels.component="compute" and log =~ "not responding and hence is being omitted from the results"'
-            labels:
-              severity: critical
-            annotations:
-              summary: Nova Cell is not responding. I can cause port deletion in CAPI.
+        - name: additional-loki-rules
+          rules:
+            - alert: NovaCellNotResponding
+              expr: 'kubernetes.labels.component="compute" and log =~ "not responding and hence is being omitted from the results"'
+              labels:
+                severity: critical
+              annotations:
+                summary: Nova Cell is not responding. It can cause port deletion in CAPI.
   singleBinary:
     replicas: 1
     nodeSelector:
