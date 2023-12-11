@@ -2,6 +2,12 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - helmChart:
+      appVersion: 0.22.1
+      version: 0.22.1
+    path: chart
+  path: roles/clickhouse_operator/files
+- contents:
+  - helmChart:
       appVersion: v1.0.0
       version: 0.3.6
     path: barbican
@@ -85,7 +91,7 @@ directories:
     path: memcached
   - helmChart:
       appVersion: v1.0.0
-      version: 0.3.29
+      version: 0.3.30
     path: neutron
   - helmChart:
       appVersion: v0.11.2
@@ -116,8 +122,8 @@ directories:
       version: 1.16.0
     path: prometheus-pushgateway
   - helmChart:
-      appVersion: 1.12.0
-      version: 1.12.0
+      appVersion: 1.13.0
+      version: 1.13.3
     path: pxc-operator
   - helmChart:
       appVersion: 1.13.1
