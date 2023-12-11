@@ -10,16 +10,16 @@ spec:
       podTemplate: clickhouse:23.11
       serviceTemplate: default
   configuration:
-    zookeeper:
-      nodes:
-      {% for i in range(0, clickhouse_keeper_helm_values.get('replicaCount', 3)) -%}
-      - host: clickhouse-keeper-{{ i }}.clickhouse-keeper-headless
-      {% endfor -%}
     clusters:
       - name: stratometrics
         layout:
           shardsCount: 2
           replicasCount: 2
+    zookeeper:
+      nodes:
+      {% for i in range(0, clickhouse_keeper_helm_values.get('replicaCount', 3)) -%}
+      - host: clickhouse-keeper-{{ i }}.clickhouse-keeper-headless
+      {% endfor -%}
     users:
       stratometrics/password_sha256_hex: "{{ stratometrics_database_password | ansible.builtin.hash('sha256') }}"
       stratometrics/networks/ip:
