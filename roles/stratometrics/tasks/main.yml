@@ -35,7 +35,7 @@
             app.kubernetes.io/name: stratometrics
         stringData:
           CLICKHOUSE_HOST: clickhouse:9000
-          CLICKHOUSE_USER: stratometrics
+          CLICKHOUSE_USERNAME: stratometrics
           CLICKHOUSE_PASSWORD: "{{ stratometrics_database_password }}"
           NOVA_TRANSPORT_URL: "{{ stratometrics_nova_secrets.resources[0].data.TRANSPORT_URL | b64decode | regex_replace('rabbit://', 'amqp://') }}"
 

@@ -22,7 +22,8 @@ spec:
           replicasCount: 2
     users:
       stratometrics/password_sha256_hex: "{{ stratometrics_database_password | ansible.builtin.hash('sha256') }}"
-      stratometrics/networks/ip: "0.0.0.0/0"
+      stratometrics/networks/ip:
+        - 0.0.0.0/0
     settings:
       compression/case/method: zstd
       disable_internal_dns_cache: 1
