@@ -1,4 +1,4 @@
-# Copyright (c) 2023 VEXXHOST, Inc.
+# Copyright (c) 2022 VEXXHOST, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -12,4 +12,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-- ansible.builtin.import_playbook: vexxhost.atmosphere.stratometrics
+- name: Apply ClickHouse cluster
+  run_once: true
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('ansible.builtin.template', 'spec.yml.j2') | from_yaml | combine(clickhouse_cluster_spec, recursive=True) }}" # noqa: yaml[line-length]
+    wait_sleep: 1
+    wait_timeout: 600
+    # wait: true
+    # wait_condition:
+    #   type: ready
+    #   status: true
