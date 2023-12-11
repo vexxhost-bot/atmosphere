@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # DNS would be like clickhouse-keeper-0.clickhouse-keepers.namespace.svc
+  name: {{ include "clickhouse-keeper.fullname" . }}-headless
+  labels:
+    {{- include "clickhouse-keeper.labels" . | nindent 4 }}
+spec:
+  clusterIP: None
+  ports:
+    - port: 9444
+      name: raft
+  selector:
+    {{- include "clickhouse-keeper.selectorLabels" . | nindent 4 }}
