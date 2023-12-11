@@ -5,20 +5,28 @@ metadata:
   namespace: stratometrics
 spec:
   defaults:
-    templates: 
+    templates:
       dataVolumeClaimTemplate: default
       podTemplate: clickhouse:23.11
+      serviceTemplate: default
   configuration:
     zookeeper:
       nodes:
       {% for i in range(0, clickhouse_keeper_helm_values.get('replicaCount', 3)) -%}
-      - host: clickhouse-keeper-{{ (i+1) }}.clickhouse-keeper-headless
+      - host: clickhouse-keeper-{{ i }}.clickhouse-keeper-headless
       {% endfor -%}
     clusters:
       - name: stratometrics
         layout:
           shardsCount: 2
           replicasCount: 2
+    users:
+      stratometrics/password_sha256_hex: "{{ stratometrics_database_password | ansible.builtin.hash('sha256') }}"
+      stratometrics/networks/ip:
+        - 0.0.0.0/0
+    settings:
+      compression/case/method: zstd
+      disable_internal_dns_cache: 1
   templates:
     volumeClaimTemplates:
       - name: default
@@ -31,6 +39,9 @@ spec:
     podTemplates:
       - name: clickhouse:23.11
         spec:
+          containers:
+            - name: clickhouse-pod
+              image: "{{ atmosphere_images['clickhouse_server'] | vexxhost.kubernetes.docker_image('ref') }}"
           affinity:
             nodeAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
@@ -40,6 +51,15 @@ spec:
                         operator: In
                         values:
                           - enabled
-          containers:
-            - name: clickhouse-pod
-              image: "{{ atmosphere_images['clickhouse_server'] | vexxhost.kubernetes.docker_image('ref') }}"
+        podDistribution:
+          - type: ShardAntiAffinity
+    serviceTemplates:
+      - name: default
+        generateName: "{chi}"
+        spec:
+          type: ClusterIP
+          ports:
+            - name: http
+              port: 8123
+            - name: client
+              port: 9000

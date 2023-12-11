@@ -1,0 +1,66 @@
+# Copyright (c) 2022 VEXXHOST, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+- name: Get an existing Secret for Nova
+  kubernetes.core.k8s_info:
+    api_version: v1
+    kind: Secret
+    name: nova-rabbitmq-user
+    namespace: openstack
+  register: stratometrics_nova_secrets
+  failed_when: stratometrics_nova_secrets.resources | length == 0
+
+- name: Deploy Stratometrics
+  run_once: true
+  kubernetes.core.k8s:
+    state: present
+    definition:
+      - apiVerison: v1
+        kind: Secret
+        metadata:
+          name: config
+          namespace: stratometrics
+          labels:
+            app.kubernetes.io/name: stratometrics
+        stringData:
+          CLICKHOUSE_HOST: clickhouse:9000
+          CLICKHOUSE_USER: stratometrics
+          CLICKHOUSE_PASSWORD: "{{ stratometrics_database_password }}"
+          NOVA_TRANSPORT_URL: "{{ stratometrics_nova_secrets.resources[0].data.TRANSPORT_URL | b64decode | regex_replace('rabbit://', 'amqp://') }}"
+
+      - apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: listener
+          namespace: stratometrics
+        spec:
+          replicas: 3
+          selector:
+            matchLabels:
+              app.kubernetes.io/name: stratometrics
+              app.kubernetes.io/component: listener
+          template:
+            metadata:
+              labels:
+                app.kubernetes.io/name: stratometrics
+                app.kubernetes.io/component: listener
+            spec:
+              containers:
+                - name: listener
+                  image: "{{ atmosphere_images['stratometrics_listener'] | vexxhost.kubernetes.docker_image('ref') }}"
+                  envFrom:
+                    - secretRef:
+                        name: config
+              nodeSelector:
+                openstack-control-plane: enabled

@@ -16,6 +16,18 @@
   hosts: controllers
   become: true
   roles:
-    - vexxhost.atmosphere.clickhouse_operator
-    - vexxhost.atmosphere.clickhouse_keeper
-    - vexxhost.atmosphere.clickhouse_cluster
+    - role: vexxhost.atmosphere.clickhouse_operator
+      tags:
+        - clickhouse-operator
+
+    - role: vexxhost.atmosphere.clickhouse_keeper
+      tags:
+        - clickhouse-keeper
+
+    - role: vexxhost.atmosphere.clickhouse_cluster
+      tags:
+        - clickhouse-cluster
+
+    - role: vexxhost.atmosphere.stratometrics
+      tags:
+        - stratometrics

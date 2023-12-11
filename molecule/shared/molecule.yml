@@ -131,6 +131,12 @@ provisioner:
           pod:
             replicas:
               api: 1
+        # Cinder
+        cinder_helm_values:
+          conf:
+            cinder:
+              DEFAULT:
+                osapi_volume_workers: 2
         # Horizon
         openstack_helm_endpoints_horizon_api_host: "dashboard.{{ domain_name }}"
         openstack_helm_endpoints_horizon_mariadb_password: secrete123
@@ -138,11 +144,8 @@ provisioner:
           pod:
             replicas:
               server: 1
-        cinder_helm_values:
-          conf:
-            cinder:
-              DEFAULT:
-                osapi_volume_workers: 2
+        # Stratometrics
+        stratometrics_database_password: secrete123
       cephs:
         ceph_osd_devices:
           - "/dev/ceph-{{ inventory_hostname_short }}-osd0/data"

@@ -12,10 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-- name: Apply ClickHouse cluster
-  run_once: true
-  kubernetes.core.k8s:
-    state: present
-    definition: "{{ lookup('ansible.builtin.template', 'spec.yml.j2') | from_yaml | combine(clickhouse_cluster_spec, recursive=True) }}" # noqa: yaml[line-length]
-    wait_sleep: 1
-    wait_timeout: 600
+galaxy_info:
+  author: VEXXHOST, Inc.
+  description: Stratometrics for Kubernetes
+  license: Apache-2.0
+  min_ansible_version: 5.5.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+
+dependencies:
+  - role: defaults
