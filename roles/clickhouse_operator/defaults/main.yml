@@ -12,8 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-- hosts: controllers
-  become: true
-  roles:
-    - vexxhost.atmosphere.clickhouse_operator
-    - vexxhost.atmosphere.clickhouse_keeper
+clickhouse_operator_helm_release_name: clickhouse-operator
+clickhouse_operator_helm_chart_path: chart/
+clickhouse_operator_helm_chart_ref: /usr/local/src/clickhouse_operator
+
+clickhouse_operator_helm_release_namespace: stratometrics
+clickhouse_operator_helm_values: {}

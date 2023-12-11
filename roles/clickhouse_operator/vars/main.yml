@@ -1,4 +1,4 @@
-# Copyright (c) 2023 VEXXHOST, Inc.
+# Copyright (c) 2022 VEXXHOST, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -12,8 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-- hosts: controllers
-  become: true
-  roles:
-    - vexxhost.atmosphere.clickhouse_operator
-    - vexxhost.atmosphere.clickhouse_keeper
+_clickhouse_operator_helm_values:
+  nameOverride: clickhouse-operator
+  image:
+    repository: "{{ atmosphere_images['clickhouse_operator'] | vexxhost.kubernetes.docker_image('name') }}"
+    tag: "{{ atmosphere_images['clickhouse_operator'] | vexxhost.kubernetes.docker_image('tag') }}"
+  nodeSelector:
+    openstack-control-plane: enabled

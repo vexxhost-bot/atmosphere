@@ -12,8 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-- hosts: controllers
-  become: true
-  roles:
-    - vexxhost.atmosphere.clickhouse_operator
-    - vexxhost.atmosphere.clickhouse_keeper
+- name: Deploy Helm chart
+  run_once: true
+  kubernetes.core.helm:
+    name: "{{ clickhouse_operator_helm_release_name }}"
+    chart_ref: "{{ clickhouse_operator_helm_chart_ref }}"
+    release_namespace: "{{ clickhouse_operator_helm_release_namespace }}"
+    create_namespace: true
+    kubeconfig: /etc/kubernetes/admin.conf
+    values: "{{ _clickhouse_operator_helm_values | combine(clickhouse_operator_helm_values, recursive=True) }}"

@@ -12,8 +12,21 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-- hosts: controllers
-  become: true
-  roles:
-    - vexxhost.atmosphere.clickhouse_operator
-    - vexxhost.atmosphere.clickhouse_keeper
+galaxy_info:
+  author: VEXXHOST, Inc.
+  description: ClickHouse Operator on Kubernetes via Helm
+  license: Apache-2.0
+  min_ansible_version: 5.5.0
+  standalone: false
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+
+dependencies:
+  - role: defaults
+  - role: vexxhost.kubernetes.upload_helm_chart
+    vars:
+      upload_helm_chart_src: "{{ clickhouse_operator_helm_chart_path }}"
+      upload_helm_chart_dest: "{{ clickhouse_operator_helm_chart_ref }}"
