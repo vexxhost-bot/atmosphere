@@ -16,7 +16,7 @@
   kubernetes.core.k8s_info:
     api_version: v1
     kind: Secret
-    name: nova-rabbitmq-user
+    name: nova-rabbitmq
     namespace: openstack
   register: stratometrics_nova_secrets
   failed_when: stratometrics_nova_secrets.resources | length == 0
@@ -37,7 +37,7 @@
           CLICKHOUSE_HOST: clickhouse:9000
           CLICKHOUSE_USERNAME: stratometrics
           CLICKHOUSE_PASSWORD: "{{ stratometrics_database_password }}"
-          NOVA_TRANSPORT_URL: "{{ stratometrics_nova_secrets.resources[0].data.TRANSPORT_URL | b64decode | regex_replace('rabbit://', 'amqp://') }}"
+          NOVA_TRANSPORT_URL: "{{ stratometrics_nova_secrets.resources[0].data.RABBITMQ_CONNECTION | b64decode | regex_replace('rabbit://', 'amqp://') | regex_replace('15672', '5672') }}"
 
       - apiVersion: apps/v1
         kind: Deployment
