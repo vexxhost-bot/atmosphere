@@ -16,7 +16,7 @@
   kubernetes.core.k8s_info:
     api_version: v1
     kind: Secret
-    name: nova-rabbitmq
+    name: nova-rabbitmq-user
     namespace: openstack
   register: stratometrics_nova_secrets
   failed_when: stratometrics_nova_secrets.resources | length == 0
