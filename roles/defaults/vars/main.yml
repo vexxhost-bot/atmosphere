@@ -194,6 +194,7 @@ _atmosphere_images:
   staffeln_api: ghcr.io/vexxhost/staffeln:v2.2.3
   staffeln_conductor: ghcr.io/vexxhost/staffeln:v2.2.3
   staffeln_db_sync: ghcr.io/vexxhost/staffeln:v2.2.3
+  stratometrics_api: ghcr.io/vexxhost/stratometrics/api:main
   stratometrics_listener: ghcr.io/vexxhost/stratometrics/listener:main
   tempest_run_tests: us-docker.pkg.dev/vexxhost-infra/openstack/tempest:30.1.0-4
   vector: docker.io/timberio/vector:0.27.0-debian

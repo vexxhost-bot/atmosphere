@@ -14,3 +14,9 @@
 
 # Database password
 # stratometrics_database_password
+
+stratometrics_host: "{{ undef('You must specify a Stratometrics host using stratometrics_host') }}"
+stratometrics_ingress_class_name: "{{ atmosphere_ingress_class_name }}"
+stratometrics_ingress_tls_secret_name: "{{ openstack_helm_ingress_secret_name | default('stratometrics-tls')}}"
+stratometrics_ingress_annotations:
+  cert-manager.io/cluster-issuer: atmosphere
