@@ -9,22 +9,18 @@
       
       
       
-        <link rel="prev" href="../deploy/production/">
       
       
-        <link rel="next" href="../monitoring/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
-        <title>Ingress - Atmosphere</title>
+        <title>Atmosphere</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -43,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ingress" class="md-skip">
+        <a href="#atmosphere" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +74,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Atmosphere" class="md-header__button md-logo" aria-label="Atmosphere" data-md-component="logo">
+    <a href="." title="Atmosphere" class="md-header__button md-logo" aria-label="Atmosphere" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -98,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ingress
+              Atmosphere
             
           </span>
         </div>
@@ -136,7 +132,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Atmosphere" class="md-nav__button md-logo" aria-label="Atmosphere" data-md-component="logo">
+    <a href="." title="Atmosphere" class="md-nav__button md-logo" aria-label="Atmosphere" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -191,7 +187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy/quick-start/" class="md-nav__link">
+      <a href="deploy/quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -212,7 +208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy/production/" class="md-nav__link">
+      <a href="deploy/production/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -237,30 +233,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Ingress
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="ingress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -269,68 +245,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#customization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-tls-version-and-ciphers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Default TLS Version and Ciphers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Default TLS Version and Ciphers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checking-tls-version-and-ciphers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Checking TLS Version and Ciphers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#legacy-tls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Legacy TLS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -342,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
+      <a href="monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -399,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/cinder/" class="md-nav__link">
+      <a href="openstack/cinder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -420,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/neutron/" class="md-nav__link">
+      <a href="openstack/neutron/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -441,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/nova/" class="md-nav__link">
+      <a href="openstack/nova/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/octavia/" class="md-nav__link">
+      <a href="openstack/octavia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/getting-started/" class="md-nav__link">
+      <a href="developer/getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/services/" class="md-nav__link">
+      <a href="developer/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/images/" class="md-nav__link">
+      <a href="developer/images/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -590,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/testing/" class="md-nav__link">
+      <a href="developer/testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,44 +552,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#customization" class="md-nav__link">
+  <a href="#community" class="md-nav__link">
     <span class="md-ellipsis">
-      Customization
+      Community
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-tls-version-and-ciphers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Default TLS Version and Ciphers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Default TLS Version and Ciphers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checking-tls-version-and-ciphers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Checking TLS Version and Ciphers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#legacy-tls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Legacy TLS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -694,44 +575,25 @@
                   
 
 
-<h1 id="ingress">Ingress</h1>
-<p>The ingress component is the primary entry point for all traffic to the cluster,
-it is currently deployed as an instance of <code>ingress-nginx</code>.  It is tuned to work
-out of the box and should require no changes</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you make any changes to the ingress configuration, you may see a small
-outage as the ingress controller is restarted.</p>
-</div>
-<h2 id="customization">Customization</h2>
-<p>You can customize <code>ingress-nginx</code>controller deployment by making changes to the
-Helm chart values used for the deployment.
-Define <code>ingress_nginx_helm_values</code> ansible variable to override values:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">ingress_nginx_helm_values</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span>
-</code></pre></div>
-<p>This will be merged with the default values for the chart.</p>
-<h2 id="default-tls-version-and-ciphers">Default TLS Version and Ciphers</h2>
-<p>To provide the most secure baseline configuration possible, <code>ingress-nginx</code>
-defaults to using TLS 1.2 and 1.3 only, with a <a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#ssl-ciphers">secure set of TLS ciphers</a>.</p>
-<h3 id="checking-tls-version-and-ciphers">Checking TLS Version and Ciphers</h3>
-<p>In order to check the TLS version and ciphers used by the ingress controller,
-you can use the <a href="https://github.com/rbsec/sslscan">sslscan</a> tool:</p>
-<div class="highlight"><pre><span></span><code>sslscan<span class="w"> </span>dashboard.cloud.example.com
-</code></pre></div>
-<h3 id="legacy-tls">Legacy TLS</h3>
-<p>The default configuration, though secure, does not support some older browsers
-and operating systems.</p>
-<p>In order to change this behaviour, you can make to make the following changes
-to the <code>ingress_nginx_helm_values</code> variable, the following example is using the
-<a href="https://ssl-config.mozilla.org/#server=nginx&amp;config=old">Mozilla SSL Configuration Generator</a>
-"Old" profile:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">ingress_nginx_helm_values</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">controller</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">ssl-protocols</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TLSv1</span><span class="nv"> </span><span class="s">TLSv1.1</span><span class="nv"> </span><span class="s">TLSv1.2</span><span class="nv"> </span><span class="s">TLSv1.3&quot;</span>
-<span class="w">      </span><span class="nt">ssl-ciphers</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA&quot;</span>
-</code></pre></div>
+<h1 id="atmosphere">Atmosphere</h1>
+<p>Atmosphere is an advanced OpenStack distribution built by <a href="https://vexxhost.com">VEXXHOST</a>
+powered by Kuberentes, which allows you to easily deliver virtual machines,
+Kubernetes and bare-metal on your on-premise hardware.</p>
+<p>The difference between Atmosphere and other deployment tools is that it is
+fully open source with batteries included.  It ships with settings that are
+curated by years of experience from our team alongside comprehensive day-2
+operations such as monitoring, centralized logging and simplified upgrades
+that only require upgrading your Atmosphere version.</p>
+<p>If you're looking to get started quickly, you can review our
+<a href="deploy/quick-start/">Quick Start</a> guide.</p>
+<h2 id="community">Community</h2>
+<p>If you have any questions and discussions about Atmosphere, you can join the
+community:</p>
+<ul>
+<li><a href="https://kubernetes.slack.com/archives/C056YSPJB7U"><code>#atmosphere</code></a> channel
+  on the Kubernetes Slack. If you are new to Kubernetes Slack workspace,
+  <a href="https://slack.kubernetes.io/">Join the Kubernetes Slack workspace</a> first.</li>
+</ul>
 
 
 
@@ -784,10 +646,10 @@ to the <code>ingress_nginx_helm_values</code> variable, the following example is
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.tracking"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.tabs.link", "navigation.tracking"], "search": "assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>

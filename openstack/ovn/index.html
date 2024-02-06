@@ -10,19 +10,17 @@
       
       
       
-        <link rel="next" href="../ingress/">
       
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
-        <title>Deployment Guide - Atmosphere</title>
+        <title>OVN - Atmosphere</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -41,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -60,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment-guide" class="md-skip">
+        <a href="#ovn" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +74,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Atmosphere" class="md-header__button md-logo" aria-label="Atmosphere" data-md-component="logo">
+    <a href="../.." title="Atmosphere" class="md-header__button md-logo" aria-label="Atmosphere" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -96,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment Guide
+              OVN
             
           </span>
         </div>
@@ -134,7 +132,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Atmosphere" class="md-nav__button md-logo" aria-label="Atmosphere" data-md-component="logo">
+    <a href="../.." title="Atmosphere" class="md-nav__button md-logo" aria-label="Atmosphere" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -149,81 +147,83 @@
       
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
           
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
-    Deployment Guide
+    Deployment
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Deployment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deploy/quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Deployment Guide
+    Quick start
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
-    
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-inventory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building inventory
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Building inventory">
-      <ul class="md-nav__list">
+    <li class="md-nav__item">
+      <a href="../../deploy/production/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#hostsini-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      hosts.ini file
-    </span>
-  </a>
   
-</li>
-        
-      </ul>
-    </nav>
+  <span class="md-ellipsis">
+    Production
+  </span>
   
-</li>
-      
-    </ul>
+
+      </a>
+    </li>
   
-</nav>
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -236,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ingress/" class="md-nav__link">
+      <a href="../../ingress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -256,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
+      <a href="../../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/cinder/" class="md-nav__link">
+      <a href="../cinder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/neutron/" class="md-nav__link">
+      <a href="../neutron/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -355,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/nova/" class="md-nav__link">
+      <a href="../nova/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -376,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openstack/octavia/" class="md-nav__link">
+      <a href="../octavia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -441,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/getting-started/" class="md-nav__link">
+      <a href="../../developer/getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/services/" class="md-nav__link">
+      <a href="../../developer/services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/images/" class="md-nav__link">
+      <a href="../../developer/images/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/testing/" class="md-nav__link">
+      <a href="../../developer/testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -552,26 +552,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#building-inventory" class="md-nav__link">
+  <a href="#recovering-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Building inventory
+      Recovering cluster
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Building inventory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hostsini-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      hosts.ini file
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -590,56 +575,29 @@
                   
 
 
-<h1 id="deployment-guide">Deployment Guide</h1>
-<h2 id="building-inventory">Building inventory</h2>
-<p>In order to deploy Atmosphere, you will need to build a directory structure
-that will contain all the configuration files and secrets required to deploy
-the platform.</p>
-<p>The recommended layout is as follows:</p>
-<div class="highlight"><pre><span></span><code>cloud-config
-├── inventory
-│   ├── group_vars
-│   │   ├── all
-│   │   │   ├── ceph.yml
-│   │   │   ├── cluster_issuer.yml
-│   │   │   ├── endpoints.yml
-│   │   │   ├── keepalived.yml
-│   │   │   ├── kube-prometheus-stack.yml
-│   │   │   ├── kubernetes.yml
-│   │   │   ├── neutron.yml
-│   │   │   └── secrets.sops.yml
-│   │   ├── cephs
-│   │   │   └── osds.yml
-│   └── hosts.ini
-├── playbooks
-│   └── site.yml
-└── requirements.yml
+<h1 id="ovn">OVN</h1>
+<h2 id="recovering-cluster">Recovering cluster</h2>
+<p>If any of the OVN database pods fail, they will no longer be ready.  You can
+recover the cluster by deleting the pods and allowing them to be recreated.</p>
+<p>For example, if the <code>ovn-ovsdb-nb-0</code> pod fails, you can recover the cluster by
+deleting the pod:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>openstack<span class="w"> </span>delete<span class="w"> </span>pods/ovn-ovsdb-nb-0
 </code></pre></div>
-<h3 id="hostsini-file"><code>hosts.ini</code> file</h3>
-<p>The <code>hosts.ini</code> file is the Ansible inventory file that will be used to deploy
-the platform. It is recommended to use the following layout:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[controllers]</span>
-<span class="na">ctl1.cloud.atmosphere.dev</span>
-<span class="na">ctl2.cloud.atmosphere.dev</span>
-<span class="na">ctl3.cloud.atmosphere.dev</span>
-
-<span class="k">[computes]</span>
-<span class="na">kvm1.cloud.atmosphere.dev</span>
-<span class="na">kvm2.cloud.atmosphere.dev</span>
-<span class="na">kvm3.cloud.atmosphere.dev</span>
-
-<span class="k">[cephs]</span>
-<span class="na">ceph1.cloud.atmosphere.dev</span>
-<span class="na">ceph2.cloud.atmosphere.dev</span>
-<span class="na">ceph3.cloud.atmosphere.dev</span>
+<p>If the entire cluster fails, you can recover the cluster by deleting all of the
+pods.  For example, if the southbound database fails, you can recover the
+cluster with this command:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>openstack<span class="w"> </span>delete<span class="w"> </span>pods<span class="w"> </span>-lcomponent<span class="o">=</span>ovn-ovsdb-sb
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The hostnames listed in the inventory file must be a FQDN that resolves to
-the IP address of the host.  If they do not, you will have failures such
-as agents failing to start, live migration failures and other transient
-and hard to diagnose issues.</p>
-</div>
+<p>If the state of Neutron is lost from the cluster, you can recover it by running
+the repair command:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>openstack<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>deploy/neutron-server<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>neutron-ovn-db-sync-util<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--debug<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config-file<span class="w"> </span>/etc/neutron/neutron.conf<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config-file<span class="w"> </span>/tmp/pod-shared/ovn.ini<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config-file<span class="w"> </span>/etc/neutron/plugins/ml2/ml2_conf.ini<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ovn-neutron_sync_mode<span class="w"> </span>repair
+</code></pre></div>
 
 
 
@@ -692,10 +650,10 @@ and hard to diagnose issues.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.tracking"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>
