@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="../../monitoring/">
       
-        <link rel="next" href="../production/">
+      
+        <link rel="next" href="../../openstack/keycloak/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Quick start - Atmosphere</title>
+        <title>Certificates - Atmosphere</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#certificates" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick start
+              Certificates
             
           </span>
         </div>
@@ -149,21 +151,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -177,7 +177,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Deployment
@@ -188,30 +188,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Quick start
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../deploy/quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -220,35 +200,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#all-in-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      All-in-one
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -261,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../production/" class="md-nav__link">
+      <a href="../../deploy/production/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -326,19 +277,21 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -352,7 +305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Kubernetes
@@ -363,10 +316,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../kubernetes/certificates/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Certificates
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -375,6 +348,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-certificate-renewal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual certificate renewal
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -691,9 +693,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#all-in-one" class="md-nav__link">
+  <a href="#manual-certificate-renewal" class="md-nav__link">
     <span class="md-ellipsis">
-      All-in-one
+      Manual certificate renewal
     </span>
   </a>
   
@@ -714,75 +716,24 @@
                   
 
 
-<h1 id="quick-start">Quick-start</h1>
-<h2 id="all-in-one">All-in-one</h2>
-<p>The easiest way to get started with Atmosphere is to deploy the all-in-one
-installation.  This will install an entire stack of Atmosphere, with Ceph
-and all the OpenStack services inside a single machine.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The all-in-one installation is not for production use, it's perfect
-for testing and development.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The all-in-one will fully take-over the machine by making system-level
-changes.  It's recommended to run it inside a virtual machine or a
-physical machine that can be dedicated to this purpose.</p>
-</div>
-<p>In order to get started, you'll need a <strong>Ubuntu 22.04</strong> system with the
-following minimum system requirements:</p>
+<h1 id="certificates">Certificates</h1>
+<h2 id="manual-certificate-renewal">Manual certificate renewal</h2>
+<p>To renew certificates manually, run the following commands on all the
+control-plane nodes.</p>
 <ul>
-<li>Cores: 8 threads / vCPUs</li>
-<li>Memory: 32GB</li>
+<li>Renew your all certificates.</li>
 </ul>
-<p>If you're looking to run Kubernetes clusters, you'll need more memory
-for the workloads, it following minimum is recommended (but more memory
-is always better!):</p>
+<div class="highlight"><pre><span></span><code>kubeadm<span class="w"> </span>certs<span class="w"> </span>renew<span class="w"> </span>all
+</code></pre></div>
 <ul>
-<li>Cores: 16 threads / vCPUs</li>
-<li>Memory: 64GB</li>
+<li>Restart control plane pods.</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If you're running this inside a virtual machine, it is <strong>extremely</strong>
-important that the virtual machines supported nested virtualization,
-otherwise the performance of the VMs will be un-usable.</p>
-</div>
-<p>You can use the following commands to deploy the all-in-one environment:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install dependencies</span>
-sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python3-pip
-sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>poetry
-
-<span class="c1"># Clone the repository</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vexxhost/atmosphere.git
-
-<span class="c1"># Deploy AIO</span>
-<span class="nb">cd</span><span class="w"> </span>atmosphere
-sudo<span class="w"> </span>poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>dev
-sudo<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>molecule<span class="w"> </span>converge<span class="w"> </span>-s<span class="w"> </span>aio
+<p>This is required since dynamic certificate reload is currently not supported
+for all components and certificates. Static Pods are managed by the local
+kubelet and not by the API Server, thus kubectl cannot be used to delete and
+restart them.</p>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>auxf<span class="w"> </span><span class="p">|</span><span class="w"> </span>egrep<span class="w"> </span><span class="s1">&#39;(kube-(apiserver|controller-manager|scheduler)|etcd)&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{ print $2 }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span>
 </code></pre></div>
-<p>Once the deployment is done, you can either use the CLI to interact with
-the OpenStack environment, or you can access the Horizon dashboard.</p>
-<p>For the CLI, you can <code>source /root/openrc</code> and then use the <code>openstack</code>
-CLI.  For example, if you want to list the networks, you can run the
-following command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/root/openrc
-openstack<span class="w"> </span>network<span class="w"> </span>list
-</code></pre></div>
-<p>For the Horizon dashboard, you can find the URL to access it by running
-the following command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>openstack<span class="w"> </span>get<span class="w"> </span>ingress/dashboard<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">&#39;{.spec.rules[0].host}&#39;</span>
-</code></pre></div>
-<p>You can find the credentials to login to the dashboard reading the
-<code>/root/openrc</code> file.  You can use the following variables to match
-the credentials:</p>
-<ul>
-<li>Username: <code>OS_USERNAME</code></li>
-<li>Password: <code>OS_PASSWORD</code></li>
-<li>Domain: <code>OS_USER_DOMAIN_NAME</code></li>
-</ul>
 
 
 

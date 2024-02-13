@@ -12,7 +12,7 @@
         <link rel="prev" href="../ingress/">
       
       
-        <link rel="next" href="../openstack/cinder/">
+        <link rel="next" href="../kubernetes/certificates/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -323,6 +323,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alert-receiver-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert receiver integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alert receiver integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagerduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagerduty
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -354,7 +387,7 @@
             
   
   <span class="md-ellipsis">
-    OpenStack
+    Kubernetes
   </span>
   
 
@@ -364,9 +397,95 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OpenStack
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
             OpenStack
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openstack/keycloak/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keycloak
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -475,10 +594,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -489,8 +608,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Developer Guide
           </label>
@@ -631,6 +750,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alert-receiver-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert receiver integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alert receiver integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagerduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagerduty
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -706,6 +858,63 @@ different deployments without manual intervention.</p>
 <a href="https://grafana.com/grafana/dashboards/">Grafana.com</a>, using Prometheus as the data source.</p>
 <p>You can find more examples of how to do this in the Grafana Helm chart
 <a href="https://github.com/grafana/helm-charts/tree/main/charts/grafana#import-dashboards">Documentation</a>.</p>
+<h2 id="alert-receiver-integration">Alert receiver integration</h2>
+<p>To receive monitoring alerts using your preferred notification tools, you'll
+need to integrate them with alertmanager.</p>
+<h3 id="email">Email</h3>
+<p>To integrate with email, configure your email server and credentials in
+alertmanager receivers like this.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">kube_prometheus_stack_helm_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">alertmanager</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">route</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">routes</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;email&quot;</span>
+<span class="w">            </span><span class="nt">matchers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;severity</span><span class="nv"> </span><span class="s">=~</span><span class="nv"> </span><span class="s">\&quot;warning|critical\&quot;&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">receivers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;email&quot;</span>
+<span class="w">          </span><span class="nt">email_configs</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">smarthost</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;smtp.gmail.com:587&#39;</span>
+<span class="w">              </span><span class="nt">auth_username</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">email</span><span class="nv"> </span><span class="s">id</span><span class="nv"> </span><span class="s">here&gt;&#39;</span>
+<span class="w">              </span><span class="nt">auth_password</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">email</span><span class="nv"> </span><span class="s">password</span><span class="nv"> </span><span class="s">here&gt;&#39;</span>
+<span class="w">              </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">email</span><span class="nv"> </span><span class="s">id</span><span class="nv"> </span><span class="s">here&gt;&#39;</span>
+<span class="w">              </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;receiver&#39;</span><span class="l l-Scalar l-Scalar-Plain">s email id here&gt;&#39;</span>
+<span class="w">              </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Prometheus</span><span class="nv"> </span><span class="s">Mail</span><span class="nv"> </span><span class="s">Alerts&#39;</span>
+</code></pre></div>
+<p>You can find more details about <code>email_configs</code> from <a href="https://prometheus.io/docs/alerting/latest/configuration/#email_config">this</a>.</p>
+<h3 id="pagerduty">Pagerduty</h3>
+<ul>
+<li>In Pagerduty</li>
+</ul>
+<p>To integrate with Pagerduty, first you need to prepare <code>Integration key</code> in
+Pagerduty.</p>
+<p>There are two ways to integrate with PagerDuty: via <a href="https://support.pagerduty.com/docs/event-orchestration">Event Orchestration</a>
+or directly through an <a href="https://support.pagerduty.com/docs/services-and-integrations#section-configuring-services-and-integrations">Integration on a PagerDuty service</a>.</p>
+<p>Integrating with Event Orchestration may be beneficial if you want to build
+different routing rules based on the events coming from the integrated tool.</p>
+<p>Integrating with a PagerDuty service directly can be beneficial if you
+don't need to route alerts from the integrated tool to different responders
+based on the event payload.</p>
+<p>You can find how to generate <code>Integration key</code> using both ways in this
+<a href="https://www.pagerduty.com/docs/guides/prometheus-integration-guide/">Document</a>.</p>
+<ul>
+<li>In Atmoshpere</li>
+</ul>
+<p>Configure your <code>Integration key</code> in alertmanager receivers like this.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">kube_prometheus_stack_helm_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">alertmanager</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">route</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">routes</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pagerduty&quot;</span>
+<span class="w">            </span><span class="nt">matchers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;severity</span><span class="nv"> </span><span class="s">=~</span><span class="nv"> </span><span class="s">\&quot;warning|critical\&quot;&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">receivers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pagerduty&quot;</span>
+<span class="w">          </span><span class="nt">pagerduty_configs</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service_key</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">integration</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">here&gt;&#39;</span>
+</code></pre></div>
+<p>You can find more details about <code>pagerduty_configs</code> from <a href="https://prometheus.io/docs/alerting/latest/configuration/#pagerduty_config">this</a>.</p>
 
 
 

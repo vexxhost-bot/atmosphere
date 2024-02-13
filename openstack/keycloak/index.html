@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="../../kubernetes/certificates/">
       
-        <link rel="next" href="../production/">
+      
+        <link rel="next" href="../cinder/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Quick start - Atmosphere</title>
+        <title>Keycloak - Atmosphere</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#keycloak" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick start
+              Keycloak
             
           </span>
         </div>
@@ -149,21 +151,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -177,7 +177,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Deployment
@@ -188,30 +188,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Quick start
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../deploy/quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -220,35 +200,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#all-in-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      All-in-one
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -261,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../production/" class="md-nav__link">
+      <a href="../../deploy/production/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -391,19 +342,21 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -417,7 +370,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             OpenStack
@@ -428,10 +381,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../openstack/keycloak/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Keycloak
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -440,6 +413,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identity-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Providers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity Providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure AD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure AD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-application-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an Application Registration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an Application Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#begin-the-application-registration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Begin the Application Registration Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtain-the-redirect-uri-from-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtain the Redirect URI from Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalize-azure-ad-application-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalize Azure AD Application Registration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -452,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openstack/cinder/" class="md-nav__link">
+      <a href="../cinder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openstack/neutron/" class="md-nav__link">
+      <a href="../neutron/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openstack/nova/" class="md-nav__link">
+      <a href="../nova/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openstack/octavia/" class="md-nav__link">
+      <a href="../octavia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,11 +765,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#all-in-one" class="md-nav__link">
+  <a href="#identity-providers" class="md-nav__link">
     <span class="md-ellipsis">
-      All-in-one
+      Identity Providers
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Identity Providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure AD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure AD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-application-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an Application Registration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an Application Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#begin-the-application-registration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Begin the Application Registration Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtain-the-redirect-uri-from-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtain the Redirect URI from Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalize-azure-ad-application-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalize Azure AD Application Registration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -714,75 +860,41 @@
                   
 
 
-<h1 id="quick-start">Quick-start</h1>
-<h2 id="all-in-one">All-in-one</h2>
-<p>The easiest way to get started with Atmosphere is to deploy the all-in-one
-installation.  This will install an entire stack of Atmosphere, with Ceph
-and all the OpenStack services inside a single machine.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The all-in-one installation is not for production use, it's perfect
-for testing and development.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The all-in-one will fully take-over the machine by making system-level
-changes.  It's recommended to run it inside a virtual machine or a
-physical machine that can be dedicated to this purpose.</p>
-</div>
-<p>In order to get started, you'll need a <strong>Ubuntu 22.04</strong> system with the
-following minimum system requirements:</p>
-<ul>
-<li>Cores: 8 threads / vCPUs</li>
-<li>Memory: 32GB</li>
-</ul>
-<p>If you're looking to run Kubernetes clusters, you'll need more memory
-for the workloads, it following minimum is recommended (but more memory
-is always better!):</p>
-<ul>
-<li>Cores: 16 threads / vCPUs</li>
-<li>Memory: 64GB</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If you're running this inside a virtual machine, it is <strong>extremely</strong>
-important that the virtual machines supported nested virtualization,
-otherwise the performance of the VMs will be un-usable.</p>
-</div>
-<p>You can use the following commands to deploy the all-in-one environment:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install dependencies</span>
-sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python3-pip
-sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>poetry
-
-<span class="c1"># Clone the repository</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vexxhost/atmosphere.git
-
-<span class="c1"># Deploy AIO</span>
-<span class="nb">cd</span><span class="w"> </span>atmosphere
-sudo<span class="w"> </span>poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>dev
-sudo<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>molecule<span class="w"> </span>converge<span class="w"> </span>-s<span class="w"> </span>aio
-</code></pre></div>
-<p>Once the deployment is done, you can either use the CLI to interact with
-the OpenStack environment, or you can access the Horizon dashboard.</p>
-<p>For the CLI, you can <code>source /root/openrc</code> and then use the <code>openstack</code>
-CLI.  For example, if you want to list the networks, you can run the
-following command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/root/openrc
-openstack<span class="w"> </span>network<span class="w"> </span>list
-</code></pre></div>
-<p>For the Horizon dashboard, you can find the URL to access it by running
-the following command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>openstack<span class="w"> </span>get<span class="w"> </span>ingress/dashboard<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">&#39;{.spec.rules[0].host}&#39;</span>
-</code></pre></div>
-<p>You can find the credentials to login to the dashboard reading the
-<code>/root/openrc</code> file.  You can use the following variables to match
-the credentials:</p>
-<ul>
-<li>Username: <code>OS_USERNAME</code></li>
-<li>Password: <code>OS_PASSWORD</code></li>
-<li>Domain: <code>OS_USER_DOMAIN_NAME</code></li>
-</ul>
+<h1 id="keycloak">Keycloak</h1>
+<p>Keycloak serves as a comprehensive identity and access management solution, facilitating the integration of various identity providers for centralized user authentication and authorization. By leveraging federated identity, Keycloak enables seamless Single Sign-On (SSO) capabilities across a suite of applications, enhancing the user experience and bolstering security measures.</p>
+<h2 id="identity-providers">Identity Providers</h2>
+<p>Incorporating identity providers into Keycloak allows users to authenticate via trusted external sources. This federated authentication scheme simplifies the login process by using existing credentials, whether from enterprise directories like LDAP or other identity services.</p>
+<h3 id="azure-ad">Azure AD</h3>
+<p>Azure AD is recognized for its extensive adoption and integration within the enterprise ecosystem, offers a secure and familiar authentication method for countless users.</p>
+<h4 id="create-an-application-registration">Create an Application Registration</h4>
+<h5 id="begin-the-application-registration-process">Begin the Application Registration Process</h5>
+<ol>
+<li>Sign in to the Azure portal and access the <strong>Azure Active Directory</strong> service.</li>
+<li>Navigate to <strong>App registrations</strong> and click <strong>New registration</strong>.</li>
+<li>Fill in the application name, select the account types it will serve, and specify a <strong>Redirect URI</strong>.</li>
+</ol>
+<h5 id="obtain-the-redirect-uri-from-keycloak">Obtain the Redirect URI from Keycloak</h5>
+<ol>
+<li>Log into the Keycloak admin console using your administrator credentials.</li>
+<li>Switch to the <code>atmosphere</code> realm where you'll be configuring Azure AD.</li>
+<li>In the <strong>Identity Providers</strong> section, select <strong>Add provider</strong> and choose <strong>Microsoft</strong>.</li>
+<li>Keycloak will generate a <strong>Redirect URI</strong> which you will use in the Azure AD application registration process to ensure that authentication responses are correctly routed.</li>
+</ol>
+<h5 id="finalize-azure-ad-application-registration">Finalize Azure AD Application Registration</h5>
+<ol>
+<li>Return to the Azure AD application registration page and input the Redirect URI from Keycloak.</li>
+<li>After the application is registered, navigate to <strong>Certificates &amp; secrets</strong> to create a client secret.</li>
+<li>Record the <strong>Client ID</strong> and <strong>Client Secret</strong> provided, as they will be needed to configure Keycloak.</li>
+</ol>
+<h4 id="configure-keycloak">Configure Keycloak</h4>
+<p>With the Client ID and Client Secret in hand, you can now set up Keycloak to use Azure AD as an identity provider.</p>
+<ol>
+<li>In the Keycloak admin console, navigate back to the <code>atmosphere</code> realm's <strong>Identity Providers</strong> section.</li>
+<li>For the Microsoft provider configuration, enter the <strong>Client ID</strong> and <strong>Client Secret</strong> obtained from Azure AD.</li>
+<li>Adjust any additional settings according to your requirements, such as the default scopes, mappers, and other provider-specific configurations.</li>
+<li>Save your changes to finalize the integration.</li>
+</ol>
+<p>By integrating Azure AD with Keycloak, you enable users to authenticate with their corporate credentials across all applications that are secured by Keycloak. This provides a consistent and secure user experience, leveraging the robust features of Azure AD within the flexible framework of Keycloak. For a deeper dive into the Azure AD configuration within Keycloak, consult the <a href="https://www.keycloak.org/docs/latest/server_admin/#_microsoft">Keycloak Microsoft Identity Provider documentation</a>.</p>
 
 
 
