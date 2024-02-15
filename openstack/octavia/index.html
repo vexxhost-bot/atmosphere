@@ -514,11 +514,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#accessing-amphorae" class="md-nav__link">
     <span class="md-ellipsis">
       Accessing Amphorae
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener-with-provisioning_status-stuck-in-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listener with provisioning_status stuck in ERROR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -693,11 +717,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#accessing-amphorae" class="md-nav__link">
     <span class="md-ellipsis">
       Accessing Amphorae
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener-with-provisioning_status-stuck-in-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listener with provisioning_status stuck in ERROR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -717,7 +765,8 @@
 
 
 <h1 id="octavia">Octavia</h1>
-<h2 id="accessing-amphorae">Accessing Amphorae</h2>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="accessing-amphorae">Accessing Amphorae</h3>
 <p>Atmosphere configures an SSH keypair which allows you to login to the Amphorae
 for debugging purposes.  The <code>octavia-worker</code> containers are fully configured
 to allow you to SSH to the Amphorae.</p>
@@ -725,6 +774,59 @@ to allow you to SSH to the Amphorae.</p>
 to it by simply executing the following:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>openstack<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>deploy/octavia-worker<span class="w"> </span>--<span class="w"> </span>ssh<span class="w"> </span><span class="m">172</span>.24.0.148
 </code></pre></div>
+<h3 id="listener-with-provisioning_status-stuck-in-error">Listener with <code>provisioning_status</code> stuck in <code>ERROR</code></h3>
+<p>There are scenarios where the load balancer could be in an <code>ACTIVE</code> state however
+the listener can be stuck in a <code>provisioning_status</code> of <code>ERROR</code>.  This is usually
+related to an expired TLS certificate not cleanly recovering.</p>
+<p>Another symptom of this issue will be that you'll see the following inside the
+<code>octavia-worker</code> logs:</p>
+<div class="highlight"><pre><span></span><code>ERROR oslo_messaging.rpc.server [None req-ad303faf-7a53-4c55-94a5-28cd61c46619 - e83856ceda5c42df8810df42fef8fc1c - - - -] Exception during message handling: octavia.amphorae.drivers.haproxy.exceptions.InternalServerError: Internal Server Erro
+ERROR oslo_messaging.rpc.server Traceback (most recent call last):
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/oslo_messaging/rpc/server.py&quot;, line 165, in _process_incoming
+ERROR oslo_messaging.rpc.server     res = self.dispatcher.dispatch(message)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/oslo_messaging/rpc/dispatcher.py&quot;, line 309, in dispatch
+ERROR oslo_messaging.rpc.server     return self._do_dispatch(endpoint, method, ctxt, args)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/oslo_messaging/rpc/dispatcher.py&quot;, line 229, in _do_dispatch
+ERROR oslo_messaging.rpc.server     result = func(ctxt, **new_args)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/controller/queue/v2/endpoints.py&quot;, line 90, in update_pool
+ERROR oslo_messaging.rpc.server     self.worker.update_pool(original_pool, pool_updates)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/controller/worker/v2/controller_worker.py&quot;, line 733, in update_pool
+ERROR oslo_messaging.rpc.server     self.run_flow(
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/controller/worker/v2/controller_worker.py&quot;, line 113, in run_flow
+ERROR oslo_messaging.rpc.server     tf.run()
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/taskflow/engines/action_engine/engine.py&quot;, line 247, in run
+ERROR oslo_messaging.rpc.server     for _state in self.run_iter(timeout=timeout):
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/taskflow/engines/action_engine/engine.py&quot;, line 340, in run_iter
+ERROR oslo_messaging.rpc.server     failure.Failure.reraise_if_any(er_failures)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/taskflow/types/failure.py&quot;, line 338, in reraise_if_any
+ERROR oslo_messaging.rpc.server     failures[0].reraise()
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/taskflow/types/failure.py&quot;, line 350, in reraise
+ERROR oslo_messaging.rpc.server     raise value
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/taskflow/engines/action_engine/executor.py&quot;, line 52, in _execute_task
+ERROR oslo_messaging.rpc.server     result = task.execute(**arguments)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/controller/worker/v2/tasks/amphora_driver_tasks.py&quot;, line 157, in execute
+ERROR oslo_messaging.rpc.server     self.amphora_driver.update(loadbalancer)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/amphorae/drivers/haproxy/rest_api_driver.py&quot;, line 236, in update
+ERROR oslo_messaging.rpc.server     self.update_amphora_listeners(loadbalancer, amphora)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/amphorae/drivers/haproxy/rest_api_driver.py&quot;, line 205, in update_amphora_listeners
+ERROR oslo_messaging.rpc.server     self.clients[amphora.api_version].upload_config(
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/amphorae/drivers/haproxy/rest_api_driver.py&quot;, line 758, in upload_config
+ERROR oslo_messaging.rpc.server     return exc.check_exception(r)
+ERROR oslo_messaging.rpc.server   File &quot;/var/lib/openstack/lib/python3.10/site-packages/octavia/amphorae/drivers/haproxy/exceptions.py&quot;, line 44, in check_exception
+ERROR oslo_messaging.rpc.server     raise responses[status_code]()
+ERROR oslo_messaging.rpc.server octavia.amphorae.drivers.haproxy.exceptions.InternalServerError: Internal Server Error
+</code></pre></div>
+<p>You can simply trigger a complete failover of the load balancer which will solve
+the issue:</p>
+<div class="highlight"><pre><span></span><code>openstack<span class="w"> </span>loadbalancer<span class="w"> </span>failover<span class="w"> </span>&lt;loadbalancer&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We're trying to collect data with when these failures occur to better understand
+the root cause.  If you encounter this issue, please reach out to the Atmosphere
+team so we can better understand the issue by filing an issue with the output of
+the <code>amphora-agent</code> logs from the Amphora.</p>
+</div>
 
 
 
