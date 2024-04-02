@@ -1,6 +1,6 @@
 dependencies:
 - name: helm-toolkit
   repository: file://../../openstack-helm-infra/helm-toolkit
-  version: 0.2.55
-digest: sha256:f25556fa4f0b285a96cbf853e72555c04e65772daf0ffa6b518321e5e249f5ca
-generated: "2023-11-22T20:14:55.619219382Z"
+  version: 0.2.62
+digest: sha256:b8cfab4ea77c97996ca873374dd79fee6792d3ff22036eadb1b2e939df599fb8
+generated: "2024-04-01T20:02:10.605988874Z"
