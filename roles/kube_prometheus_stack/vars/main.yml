@@ -497,7 +497,7 @@ _kube_prometheus_stack_helm_values:
       - --collector.filesystem.mount-points-exclude=^/(dev|proc|run/credentials/.+|sys|var/lib/docker/.+|var/lib/kubelet/pods/.+|var/lib/kubelet/plugins/kubernetes.io/csi/.+|run/containerd/.+)($|/)
       - --collector.netclass.ignored-devices=^(lxc|cilium_|qbr|qvb|qvo|tap|ovs-system|br|tbr|gre_sys|[0-9a-f]+_eth|vxlan).*$
       - --collector.netdev.device-exclude=^(lxc|cilium_|qbr|qvb|qvo|tap|ovs-system|br|tbr|gre_sys|[0-9a-f]+_eth|vxlan).*$
-      - --collector.textfile.directory=/home/root/tmp
+      - --collector.textfile.directory=/host/root/tmp
     prometheus:
       monitor:
         relabelings: *relabelings_instance_to_node_name

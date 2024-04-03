@@ -64,7 +64,7 @@ local mixins = {
             {
               alert: 'BluestoreFragmentationScoreConsiderable',
               annotations: {
-                description: 'Bluestore fragmentation score for osd {{ $labels.osd }} on host {{ $labels.instance }} is currently at {{ $value }}. If it continue to goes higher then 0.9, it will impact other running services.'
+                description: 'Bluestore fragmentation score for osd {{ $labels.osd }} on host {{ $labels.instance }} is currently at {{ $value }}. If it continue to goes higher then 0.9, it will impact other running services.',
                 summary: '[{{ $labels.osd }}] reaching a considerable value: {{ $value }}',
               },
               'for': '1m',
@@ -78,7 +78,7 @@ local mixins = {
             {
               alert: 'BluestoreFragmentationScoreHigh',
               annotations: {
-                description: 'Bluestore fragmentation score for osd {{ $labels.osd }} on host {{ $labels.instance }} is currently at {{ $value }}. It might impact other running services.'
+                description: 'Bluestore fragmentation score for osd {{ $labels.osd }} on host {{ $labels.instance }} is currently at {{ $value }}. It might impact other running services.',
                 summary: '[{{ $labels.osd }}] reaching a high value: {{ $value }}',
               },
               'for': '1m',
